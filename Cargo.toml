@@ -1,0 +1,31 @@
+[package]
+name = "cosmic-tiling-manager"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+libcosmic = { git = "https://github.com/pop-os/libcosmic.git" }
+ron = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rfd = "0.14"
+
+[package.metadata.deb]
+maintainer = "Author <author@example.com>"
+copyright = "2024"
+license-file = []
+depends = "$auto"
+section = "utility"
+priority = "optional"
+assets = [
+    ["target/release/cosmic-tiling-manager", "usr/bin/", "755"],
+    ["data/cosmic-tiling-manager.desktop", "usr/share/applications/", "644"],
+    ["data/cosmic-tiling-manager.svg", "usr/share/icons/hicolor/scalable/apps/", "644"]
+]
+
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/cosmic-tiling-manager", dest = "/usr/bin/cosmic-tiling-manager", mode = "755" },
+    { source = "data/cosmic-tiling-manager.desktop", dest = "/usr/share/applications/cosmic-tiling-manager.desktop", mode = "644" },
+    { source = "data/cosmic-tiling-manager.svg", dest = "/usr/share/icons/hicolor/scalable/apps/cosmic-tiling-manager.svg", mode = "644" }
+]

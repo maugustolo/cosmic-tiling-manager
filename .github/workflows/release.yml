@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Build & Package
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxkbcommon-dev libwayland-dev libegl1-mesa-dev rpm
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Packaging Tools
+        run: cargo install cargo-deb cargo-generate-rpm cargo-appimage
+
+      - name: Build Release
+        run: cargo build --release
+
+      - name: Generate DEB
+        run: cargo deb
+
+      - name: Generate RPM
+        run: cargo generate-rpm
+
+      - name: Generate AppImage
+        run: cargo appimage
+        env:
+          APPIMAGE_EXTRACT_AND_RUN: 1
+
+      - name: Publish Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            target/debian/*.deb
+            target/generate-rpm/*.rpm
+            *.AppImage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
