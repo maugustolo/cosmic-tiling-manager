@@ -2,6 +2,8 @@
 name = "cosmic-tiling-manager"
 version = "0.1.0"
 edition = "2024"
+description = "Manage COSMIC tiling exceptions"
+license = "MIT"
 
 [dependencies]
 libcosmic = { git = "https://github.com/pop-os/libcosmic.git" }
