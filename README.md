@@ -74,7 +74,7 @@ If you have a complex set of rules and want to back them up or share them with a
 
 ---
 
-## 🏗️ Building from source
+## Building from source
 
 Ensure you have Rust and the COSMIC development libraries installed (Wayland, xkbcommon).
 ```bash
@@ -82,3 +82,7 @@ git clone https://github.com/maugustolo/cosmic-tiling-manager.git
 cd cosmic-tiling-manager
 cargo build --release
 ```
+
+---
+
+_Vibecoded by Marcos Augusto, Creative Diretror, Copywriter and Linux Enthusiast_
