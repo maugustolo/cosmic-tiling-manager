@@ -78,4 +78,4 @@ cargo build --release
 
 ---
 
-_Vibecoded by Marcos Augusto, Creative Diretror, Copywriter and Linux Enthusiast_
+_Vibecoded by Marcos Augusto, Creative Director, Copywriter and Linux Enthusiast_
