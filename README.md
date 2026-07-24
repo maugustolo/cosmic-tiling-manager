@@ -45,13 +45,6 @@ sudo apt install ./cosmic-tiling-manager_*.deb
 sudo dnf install ./cosmic-tiling-manager_*.rpm
 ```
 
-### Universal (`.AppImage`)
-Simply make it executable and run:
-```bash
-chmod +x cosmic-tiling-manager-x86_64.AppImage
-./cosmic-tiling-manager-x86_64.AppImage
-```
-
 ---
 
 ## How to Use
