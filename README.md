@@ -18,7 +18,7 @@
 
 To fetch open windows dynamically, this application communicates with the COSMIC Compositor via the `cosmic-ext-window-helper` script.
 
-### 1. Install `cosmic-ext-window-helper`
+### 1. Install [cosmic-ext-window-helper](https://github.com/lapause/cosmic-ext-window-helper)
 You must install the helper script via `pipx` before using this application:
 ```bash
 sudo apt update
